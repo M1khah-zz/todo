@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Todo</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <title>SAMPLE TODO LIST | <%= yield(:title) %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
 </head>
 <body>
+<div class="container-app">
 
-<%= yield %>
+  <%= render 'layouts/user' %>
 
+  <h1 class="logo">Sample todo lists</h1>
+    <p class="descriptor">Form ruby garage</p>
+  <% map = { notice: 'success', alert: 'danger'}.with_indifferent_access %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= map[key] %>"><%= value %></div>
+  <% end %>
+
+  <%= yield %>
+</div>
+<div class="footer">
+  <a href="http://rubygarage.org/" >@Ruby Garage</a>
+</div>
 </body>
 </html>
