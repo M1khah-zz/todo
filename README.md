@@ -1,3 +1,6 @@
+### App is available on url - https://afternoon-wave-80408.herokuapp.com/
+
+
 ###SQL task
 
 ####Given tables:
