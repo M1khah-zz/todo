@@ -26,9 +26,9 @@
   <ul id="list<%=list.id%>" class="task-list">
     <% list.tasks.each do |task| %>
     <li class="task" id="task_<%= task.id %>" >
-      <%= check_box_tag task.id, task.id, task.mark, class: "task-check" %>
+      <%= check_box_tag task.id, task.id, task.done, class: "task-check" %>
       <label for=<%=task.id %> ></label>
-      <% if task.mark %>
+      <% if task.done %>
         <p class="done"><%= task.content %></p>
       <% else %>
         <p><%= task.content %></p>
@@ -48,4 +48,4 @@
   </ul>
 <% end %>
 
-<%= link_to "#{image_tag("blue+.png")}" 'Add TODO List'.html_safe, new_list_path, class: "add-button" %>
+<%= link_to "#{image_tag("plus.png")}" 'Add TODO List'.html_safe, new_list_path, class: "add-button" %>

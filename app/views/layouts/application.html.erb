@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SAMPLE TODO LIST | <%= yield(:title) %></title>
+  <title>Todo list | <%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -22,7 +22,7 @@
   <%= yield %>
 </div>
 <div class="footer">
-  <a href="http://rubygarage.org/" >@Ruby Garage</a>
+  <a href="http://rubygarage.org/" >&copy;Ruby Garage</a>
 </div>
 </body>
 </html>
